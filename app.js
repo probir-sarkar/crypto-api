@@ -2,9 +2,11 @@ const express = require("express");
 const app = express();
 const axios = require("axios");
 const Ticker = require("./models/tickerModel");
+const cors = require("cors");
 
 // use express.json() to parse JSON bodies into JS objects
 app.use(express.json());
+app.use(cors());
 
 app.get("/api/ticker", (req, res) => {
   Ticker.find()
